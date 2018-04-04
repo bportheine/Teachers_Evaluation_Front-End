@@ -9,8 +9,4 @@ describe('<App />', () => {
     expect(app).toHaveTagName('div')
     expect(app).toHaveClassName('App')
   })
-
-  it('contains a title', () => {
-    expect(app.find('h1.title')).toHaveText('Test')
-  })
 })
