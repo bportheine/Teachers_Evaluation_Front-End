@@ -34,7 +34,21 @@ const batch = {
       "teacher_id": 1,
       }
     ]
-    }
+   },
+   {
+   "id": 3,
+   "name": "Ava",
+   "photo": "blank-profile-picture.png",
+   "evaluations": [
+     {
+     "id": 1,
+     "date": "2018-03-25",
+     "color": "yellow",
+     "comment": "Could be better in the hood",
+     "teacher-id": 1,
+     }
+   ]
+   },
   ]
 }
 
@@ -73,13 +87,12 @@ static PropTypes = {
                 <img src={"blank-profile-picture.png"} alt="student"/>
                 <span class="card-title">{s.name}</span>
               </div>
-              <div class="card-content">
-                {s.evaluations.map(e =>
+              {s.evaluations.map(e =>
+              <div class={e.color}>
                   <div>
                     <p>{e.color}</p>
                   </div>
-                )}
-              </div>
+              </div>)}
               <div class="card-action">
                 <a href="#">EVALUATE</a>
               </div>
