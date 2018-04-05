@@ -63,19 +63,34 @@ static PropTypes = {
   render() {
     return (
       <div>
-      <Title content="Batch 1" />
-      <ol>
+      <ul>
         {batch.students.map(s =>
-          <li>
-          <h3>{s.name}</h3>
-            {s.evaluations.map(e =>
-              <div>
-                <p>{e.color}</p>
+        <li>
+        <div class="row">
+          <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <img src={"blank-profile-picture.png"} alt="student"/>
+                <span class="card-title">{s.name}</span>
               </div>
-            )}
-          </li>)}
-      </ol>
+              <div class="card-content">
+                {s.evaluations.map(e =>
+                  <div>
+                    <p>{e.color}</p>
+                  </div>
+                )}
+              </div>
+              <div class="card-action">
+                <a href="#">EVALUATE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </li>)}
+        </ul>
       </div>
+
+
     )
   }
 }
