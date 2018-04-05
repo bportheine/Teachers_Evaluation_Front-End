@@ -4,7 +4,6 @@ import Title from '../components/Title'
 
 class Student extends PureComponent {
   static propTypes = {
-      content: PropTypes.string.isRequired,
     }
 
   render() {
