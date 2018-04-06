@@ -8,7 +8,14 @@ class Title extends PureComponent {
 
   render() {
     return (
-      <h1>{ this.props.content }</h1>
+      <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">{ this.props.content }</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="localhost:3000/login">Log Out</a></li>
+        </ul>
+      </div>
+      </nav>
     )
   }
 }

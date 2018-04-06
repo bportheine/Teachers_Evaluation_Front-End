@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Title from '../components/Title'
+import Nav from '../components/Title'
+import './BatchList.css'
 
-const batch = {
+const batches = [{
   "id": 1,
   "start_date": "2018-03-02",
   "end_date": "2018-06-02",
@@ -32,7 +33,64 @@ const batch = {
    "name": "Amy",
    }
   ]
-}
+},
+{
+  "id": 2,
+  "start_date": "2018-05-10",
+  "end_date": "2018-08-10",
+  "students": [
+    {
+    "id": 1,
+    "name": "Joe",
+    },
+    {
+    "id": 2,
+    "name": "Dan",
+   },
+   {
+   "id": 3,
+   "name": "Ava",
+   },
+   {
+   "id": 4,
+   "name": "Ivy",
+   }
+  ]
+},
+{
+  "id": 3,
+  "start_date": "2018-07-18",
+  "end_date": "2018-10-18",
+  "students": [
+    {
+    "id": 1,
+    "name": "Joe",
+    },
+    {
+    "id": 2,
+    "name": "Dan",
+   },
+   {
+   "id": 3,
+   "name": "Ava",
+   },
+   {
+   "id": 4,
+   "name": "Ivy",
+   },
+   {
+   "id": 5,
+   "name": "Bob",
+   },
+   {
+   "id": 6,
+   "name": "Amy",
+ },
+ {
+ "id": 7,
+ "name": "Amy2",
+ }]
+}]
 
 class BatchList extends PureComponent {
 
@@ -49,32 +107,18 @@ static PropTypes = {
   render() {
     return (
       <div>
-        <Title content="BatchList" />
+        <Nav content="Batch List"/>
           <ul class="collection">
+          {batches.map(b =>
             <li class="collection-item avatar">
               <i class="material-icons circle">class</i>
-              <span class="title">Title</span>
-              <p>First Line <br/>
-                 Second Line
+              <span class="title">Batch #{b.id}</span>
+              <p>Students: {b.students.length} <br/>
+                 Start: {b.start_date}<br/>
+                 End: {b.end_date}
               </p>
               <a href="http://localhost:3000/batch" class="secondary-content"><i class="material-icons">arrow_forward</i></a>
-            </li>
-            <li class="collection-item avatar">
-              <i class="material-icons circle">class</i>
-              <span class="title">Title</span>
-              <p>First Line <br/>
-                 Second Line
-              </p>
-              <a href="http://localhost:3000/batch" class="secondary-content"><i class="material-icons">arrow_forward</i></a>
-            </li>
-            <li class="collection-item avatar">
-              <i class="material-icons circle">class</i>
-              <span class="title">Title</span>
-              <p>First Line <br/>
-                 Second Line
-              </p>
-              <a href="http://localhost:3000/batch" class="secondary-content"><i class="material-icons">arrow_forward</i></a>
-            </li>
+            </li>)}
           </ul>
       </div>
     )

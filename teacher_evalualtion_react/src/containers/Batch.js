@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Title from '../components/Title'
+import Nav from '../components/Title'
 import RandomButton from '../components/RandomButton'
 import './Batch.css'
 
@@ -120,8 +120,8 @@ static PropTypes = {
 
   render() {
     return (
-      <div class="container">
-        <Title content="Batch" />
+      <div>
+        <Nav content="Batch #1"/>
         <RandomButton />
         {batch.students.map(s =>
             <div class="card">
