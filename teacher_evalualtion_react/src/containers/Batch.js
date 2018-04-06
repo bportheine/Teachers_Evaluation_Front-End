@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Title from '../components/Title'
+import RandomButton from '../components/RandomButton'
+import './Batch.css'
 
 const batch = {
   "id": 1,
@@ -49,6 +51,48 @@ const batch = {
      }
    ]
    },
+   {
+   "id": 4,
+   "name": "Ivy",
+   "photo": "blank-profile-picture.png",
+   "evaluations": [
+     {
+     "id": 1,
+     "date": "2018-03-25",
+     "color": "green",
+     "comment": "All's good in the hood",
+     "teacher-id": 1,
+     }
+   ]
+   },
+   {
+   "id": 5,
+   "name": "Bob",
+   "photo": "blank-profile-picture.png",
+   "evaluations": [
+     {
+     "id": 1,
+     "date": "2018-03-25",
+     "color": "green",
+     "comment": "All's good in the hood",
+     "teacher-id": 1,
+     }
+   ]
+   },
+   {
+   "id": 6,
+   "name": "Amy",
+   "photo": "blank-profile-picture.png",
+   "evaluations": [
+     {
+     "id": 1,
+     "date": "2018-03-25",
+     "color": "red",
+     "comment": "Not so good in the hood",
+     "teacher-id": 1,
+     }
+   ]
+   }
   ]
 }
 
@@ -76,12 +120,10 @@ static PropTypes = {
 
   render() {
     return (
-      <div>
-      <ul>
+      <div class="container">
+        <Title content="Batch" />
+        <RandomButton />
         {batch.students.map(s =>
-        <li>
-        <div class="row">
-          <div class="col s12 m7">
             <div class="card">
               <div class="card-image">
                 <img src={"blank-profile-picture.png"} alt="student"/>
@@ -94,16 +136,13 @@ static PropTypes = {
                   </div>
               </div>)}
               <div class="card-action">
-                <a href="#">EVALUATE</a>
+                <a class="blue-grey darken-1 waves-effect waves-light btn"><i class="material-icons right">rate_review</i>Evaluate</a>
               </div>
-            </div>
-          </div>
+            </div>)}
+        <div class="card-action">
+          <a class="blue-grey lighten-3 waves-effect waves-light btn"><i class="material-icons right">person_add</i>Add Student</a>
         </div>
-        </li>)}
-        </ul>
       </div>
-
-
     )
   }
 }
