@@ -96,7 +96,7 @@ const batch = {
   ]
 }
 
-class List extends PureComponent {
+class Batch extends PureComponent {
 
 static PropTypes = {
   batch: PropTypes.objectOf(PropTypes.shape({
@@ -136,7 +136,7 @@ static PropTypes = {
                   </div>
               </div>)}
               <div class="card-action">
-                <a class="blue-grey darken-1 waves-effect waves-light btn"><i class="material-icons right">rate_review</i>Evaluate</a>
+                <a class="blue-grey darken-1 waves-effect waves-light btn" href="http://localhost:3000/batchlist"><i class="material-icons right">rate_review</i>Evaluate</a>
               </div>
             </div>)}
         <div class="card-action">
@@ -147,4 +147,4 @@ static PropTypes = {
   }
 }
 
-export default List
+export default Batch

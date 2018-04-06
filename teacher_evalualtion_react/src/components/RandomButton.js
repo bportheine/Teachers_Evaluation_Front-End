@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 //
 // switch (color) {
 //   case 'green':
-//     console.log('Oranges are $0.59 a pound.');
+//
 //     break;
 //   case 'yellow':
 //
@@ -14,7 +14,7 @@ import PropTypes from 'prop-types'
 //
 //     break;
 //   default:
-//     console.log('Sorry, we are out of ' + expr + '.');
+//  
 // }
 
 
