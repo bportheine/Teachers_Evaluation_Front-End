@@ -109,24 +109,24 @@ const Rand = Math.random()
 console.log(Rand)
 
 const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min));
 }
 
 const Algorithm = (r) => {
   if(r <= 0.53){
-    console.log(Students_Red[getRandomInt(0, Students_Red.length)].name)
+    return (Students_Red[getRandomInt(0, Students_Red.length)].name)
   }
   else if(r > 0.53 && r <= 0.81){
-    console.log(Students_Yellow[getRandomInt(0, Students_Yellow.length)].name)
+    return (Students_Yellow[getRandomInt(0, Students_Yellow.length)].name)
   }
   else if(r > 0.81){
-    console.log(Students_Green[getRandomInt(0, Students_Green.length)].name)
+    return (Students_Green[getRandomInt(0, Students_Green.length)].name)
   }
   else {
-    console.log('Error')
+    return ('Error')
   }
 }
-Algorithm(Rand)
+console.log(Algorithm(Rand))
 
 class Batch extends PureComponent {
 
@@ -156,6 +156,7 @@ static PropTypes = {
       <div>
         <Nav content="Batch #1"/>
         <RandomButton />
+        <p>{Algorithm(Rand)}</p>
         <ul class="collection">
           {batch.students.map(s =>
           <li class="collection-item avatar">
