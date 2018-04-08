@@ -161,7 +161,7 @@ static PropTypes = {
           {batch.students.map(s =>
           <li class="collection-item avatar">
             <i class="material-icons circle orange darken-2">person</i>
-            <span class="title">{s.name}</span>
+            <span class="Nav">{s.name}</span>
             <p>Student # {s.id}</p>
             {s.evaluations.map(e =>
               <div>

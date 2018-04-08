@@ -6,9 +6,7 @@ class EvalForm extends PureComponent {
   }
 
   render() {
-    return (
-
-    )
+    return ()
   }
 }
 

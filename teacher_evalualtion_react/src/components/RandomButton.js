@@ -8,10 +8,10 @@ class RandomButton extends PureComponent {
     randomButton: PropTypes.func.isRequired
   }
 
-  // handleClick = () => {
-  //   console.log(this.props);
-  //   this.props.randomButton({...this.props.response})
-  // }
+  handleClick = () => {
+    console.log(this.props);
+    this.props.randomButton({...this.props.response})
+  }
 
   render() {
     return (

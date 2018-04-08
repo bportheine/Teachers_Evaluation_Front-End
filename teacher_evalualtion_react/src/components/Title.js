@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-class Title extends PureComponent {
+class Nav extends PureComponent {
   static propTypes = {
       content: PropTypes.string.isRequired,
     }
@@ -20,4 +20,4 @@ class Title extends PureComponent {
   }
 }
 
-export default Title
+export default Nav

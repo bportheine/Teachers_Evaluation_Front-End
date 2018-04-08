@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import Title from '../components/Title'
+import Nav from '../components/Title'
 
 class Login extends PureComponent {
   static propTypes = {
@@ -9,7 +9,7 @@ class Login extends PureComponent {
   render() {
     return (
       <div>
-      <Title content="Login" />
+      <Nav content="Login" />
       <div class="row">
         <form class="col s12">
           <div class="row">
