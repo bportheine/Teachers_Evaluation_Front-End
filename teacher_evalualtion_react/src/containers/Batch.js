@@ -4,7 +4,7 @@ import Nav from '../components/Title'
 import RandomButton from '../components/RandomButton'
 import './Batch.css'
 
-const batch = {
+export const batch = {
   "id": 1,
   "start_date": "2018-03-02",
   "end_date": "2018-06-02",
