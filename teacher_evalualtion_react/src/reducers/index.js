@@ -1,2 +1,5 @@
+import randomButton from './randomButton'
 
-export default {}
+export default {
+  randomButton,
+}

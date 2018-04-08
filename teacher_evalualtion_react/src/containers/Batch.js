@@ -17,7 +17,7 @@ const batch = {
       {
       "id": 1,
       "date": "2018-03-25",
-      "color": "green",
+      "color": "Green",
       "comment": "All's good in the hood",
       "teacher-id": 1,
       }
@@ -31,7 +31,7 @@ const batch = {
       {
       "id": 1,
       "date": "2018-03-25",
-      "color": "red",
+      "color": "Red",
       "comment": "Not so good in the hood",
       "teacher_id": 1,
       }
@@ -45,7 +45,7 @@ const batch = {
      {
      "id": 1,
      "date": "2018-03-25",
-     "color": "yellow",
+     "color": "Yellow",
      "comment": "Could be better in the hood",
      "teacher-id": 1,
      }
@@ -59,7 +59,7 @@ const batch = {
      {
      "id": 1,
      "date": "2018-03-25",
-     "color": "green",
+     "color": "Green",
      "comment": "All's good in the hood",
      "teacher-id": 1,
      }
@@ -73,7 +73,7 @@ const batch = {
      {
      "id": 1,
      "date": "2018-03-25",
-     "color": "green",
+     "color": "Green",
      "comment": "All's good in the hood",
      "teacher-id": 1,
      }
@@ -87,7 +87,7 @@ const batch = {
      {
      "id": 1,
      "date": "2018-03-25",
-     "color": "red",
+     "color": "Red",
      "comment": "Not so good in the hood",
      "teacher-id": 1,
      }
@@ -95,6 +95,34 @@ const batch = {
    }
   ]
 }
+
+const Students_Green = batch.students.filter( s => s.evaluations[0].color === 'Green')
+console.log(Students_Green)
+
+const Students_Yellow = batch.students.filter( s => s.evaluations[0].color === 'Yellow')
+console.log(Students_Yellow)
+
+const Students_Red = batch.students.filter( s => s.evaluations[0].color === 'Red')
+console.log(Students_Red)
+
+const Rand = Math.random()
+console.log(Rand)
+
+const Algorithm = (r) => {
+  if(r <= 0.53){
+    console.log('Red')
+  }
+  else if(r > 0.53 && r <= 0.81){
+    console.log('Yellow')
+  }
+  else if(r > 0.81){
+    console.log('Green')
+  }
+  else {
+    console.log('Error')
+  }
+}
+Algorithm(Rand)
 
 class Batch extends PureComponent {
 
@@ -118,30 +146,27 @@ static PropTypes = {
   })).isRequired
 }
 
+
   render() {
     return (
       <div>
         <Nav content="Batch #1"/>
         <RandomButton />
-        {batch.students.map(s =>
-            <div class="card">
-              <div class="card-image">
-                <img src={"blank-profile-picture.png"} alt="student"/>
-                <span class="card-title">{s.name}</span>
+        <ul class="collection">
+          {batch.students.map(s =>
+          <li class="collection-item avatar">
+            <i class="material-icons circle orange darken-2">person</i>
+            <span class="title">{s.name}</span>
+            <p>Student # {s.id}</p>
+            {s.evaluations.map(e =>
+              <div>
+                <p>Current Status: <span class={e.color.toLowerCase()}>{e.color}</span></p>
               </div>
-              {s.evaluations.map(e =>
-              <div class={e.color}>
-                  <div>
-                    <p>{e.color}</p>
-                  </div>
-              </div>)}
-              <div class="card-action">
-                <a class="blue-grey darken-1 waves-effect waves-light btn" href="http://localhost:3000/batchlist"><i class="material-icons right">rate_review</i>Evaluate</a>
-              </div>
-            </div>)}
-        <div class="card-action">
-          <a class="blue-grey lighten-3 waves-effect waves-light btn"><i class="material-icons right">person_add</i>Add Student</a>
-        </div>
+            )}
+            <a href="http://localhost:3000/student" class="secondary-content"><i class="material-icons">rate_review</i></a>
+            </li>
+          )}
+        </ul>
       </div>
     )
   }

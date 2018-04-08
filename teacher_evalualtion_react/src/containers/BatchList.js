@@ -111,7 +111,7 @@ static PropTypes = {
           <ul class="collection">
           {batches.map(b =>
             <li class="collection-item avatar">
-              <i class="material-icons circle">class</i>
+              <i class="material-icons circle orange darken-2">class</i>
               <span class="title">Batch #{b.id}</span>
               <p>Students: {b.students.length} <br/>
                  Start: {b.start_date}<br/>

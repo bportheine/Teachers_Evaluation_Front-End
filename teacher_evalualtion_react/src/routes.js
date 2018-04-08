@@ -10,10 +10,10 @@ export default class Routes extends Component {
   render() {
     return (
       <div>
-        <Route exact path="/" component={Batch} />
+        <Route exact path="/" component={Login} />
         <Route exact path="/batchlist" component={BatchList} />
         <Route exact path="/batch" component={Batch} />
-        <Route path="/batchlist/:batchId/students/:studentId" component={Student} />
+        <Route path="/student" component={Student} />
       </div>
     )
   }

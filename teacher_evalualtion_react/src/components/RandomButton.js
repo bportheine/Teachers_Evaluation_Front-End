@@ -1,32 +1,28 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-
-// const color = {batch.students.map(s => {s.evaluations.map(e => e.color)} )}
-//
-// switch (color) {
-//   case 'green':
-//
-//     break;
-//   case 'yellow':
-//
-//     break;
-//   case 'red':
-//
-//     break;
-//   default:
-//  
-// }
-
+import { connect } from 'react-redux'
+import { randomButton } from '../actions/randomButton'
 
 class RandomButton extends PureComponent {
+  static propTypes = {
+    randomButton: PropTypes.func.isRequired
+  }
+
+  handleClick = () => {
+    console.log(this.props);
+    this.props.randomButton({...this.props.response})
+  }
 
   render() {
     return (
-      <div class="card-action">
-        <a class="blue-grey darken-3 waves-effect waves-light btn"><i class="material-icons right">live_help</i>Ask a Question</a>
+      <div>
+        <a onClick={this.handleClick} class="orange darken-2 waves-effect waves-light btn"><i class="material-icons right">live_help</i>Ask a Question</a>
+        <p>Student</p>
       </div>
     )
   }
 }
 
-export default RandomButton
+const mapStateToProps = ({ randomButton }) => ({ randomButton })
+
+export default connect(mapStateToProps)(RandomButton)
