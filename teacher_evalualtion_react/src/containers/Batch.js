@@ -109,7 +109,7 @@ const Rand = Math.random()
 console.log(Rand)
 
 const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min));
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 const Algorithm = (r) => {
