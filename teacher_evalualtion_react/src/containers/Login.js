@@ -24,6 +24,9 @@ class Login extends PureComponent {
               <label for="password">Password</label>
             </div>
           </div>
+          <button href="localhost:3000/batchlist" class="btn waves-effect waves-light" type="submit" name="action">Login
+            <i class="material-icons right">send</i>
+          </button>
         </form>
       </div>
     </div>

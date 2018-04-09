@@ -96,22 +96,23 @@ export const batch = {
   ]
 }
 
+//Organize students into color arrays
 const Students_Green = batch.students.filter( s => s.evaluations[0].color === 'Green')
-console.log(Students_Green)
-
+  console.log(Students_Green)
 const Students_Yellow = batch.students.filter( s => s.evaluations[0].color === 'Yellow')
-console.log(Students_Yellow)
-
+  console.log(Students_Yellow)
 const Students_Red = batch.students.filter( s => s.evaluations[0].color === 'Red')
-console.log(Students_Red)
+  console.log(Students_Red)
 
+//Random variable to choose color array
 const Rand = Math.random()
-console.log(Rand)
-
+  console.log(Rand)
+//Random variable to choose which student in array
 const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+//Algorithm in Action
 const Algorithm = (r) => {
   if(r <= 0.53){
     return (Students_Red[getRandomInt(0, Students_Red.length)].name)
@@ -155,8 +156,10 @@ static PropTypes = {
     return (
       <div>
         <Nav content="Batch #1"/>
-        <RandomButton />
-        <p>{Algorithm(Rand)}</p>
+        <div>
+          <a onClick={this.handleClick} class="orange darken-2 waves-effect waves-light btn"><i class="material-icons right">live_help</i>Ask a Question</a>
+          <p>{Algorithm(Rand)}</p>
+        </div>
         <ul class="collection">
           {batch.students.map(s =>
           <li class="collection-item avatar">
